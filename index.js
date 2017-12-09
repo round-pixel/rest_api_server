@@ -12,7 +12,7 @@ application.get('/', function(req, res) {
 });
 
 application.get('/posts/:id', function(req, res) {
-  res.json(posts[req.params.id]);
+  res.json(posts[req.params.id - 1]);
 });
 
 application.listen(3002, function() {
