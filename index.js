@@ -11,6 +11,10 @@ application.get('/', function(req, res) {
   res.json(posts);
 });
 
+application.get('/posts/:id', function(req, res) {
+  res.json(posts[req.params.id]);
+});
+
 application.listen(3002, function() {
   console.log('Server on 3002');
 });
