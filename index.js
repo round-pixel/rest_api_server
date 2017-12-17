@@ -4,11 +4,18 @@ var application = express();
 var cors = require('cors');
 
 var posts = require('./data').posts;
+var filtered = require('./helpers').filtered;
 
 application.use(cors());
 
 application.get('/', function(req, res) {
-  res.json(posts);
+  if (req.query.search) {
+    var filter = req.query.search;
+    var result = filtered(posts, filter)
+    res.json(result);
+  } else {
+    res.json(posts);
+  };
 });
 
 application.get('/posts/:id', function(req, res) {
