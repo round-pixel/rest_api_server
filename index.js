@@ -22,6 +22,25 @@ application.get('/posts/:id', function(req, res) {
   res.json(posts[req.params.id - 1]);
 });
 
+application.post('/posts/:id', function(req, res) {
+  var like;
+  if (req.query.like) {
+    switch (req.query.like) {
+      case 'add':
+        like = 1;
+        break;
+      case 'remove':
+        like = -1;
+        break;
+      default:
+        like = 0;
+    }
+  };
+  var post = posts[req.params.id - 1];
+  post.likes += like;
+  res.json(post);
+});
+
 application.listen(3002, function() {
   console.log('Server on 3002');
 });

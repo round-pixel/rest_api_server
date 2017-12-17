@@ -22,7 +22,8 @@ module.exports = {
       message: 'The long river',
       metaInfo: {
         updatedAt: new Date(2017, 0, 1, 2, 3, 4)
-      }
+      },
+      likes: 0
     },
     {
       id: 3,
