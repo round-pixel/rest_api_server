@@ -3,7 +3,7 @@ module.exports = {
     {
       id: 1,
       image: {
-        src: '/dist/images/summer.jpg',
+        src: '/images/summer.jpg',
         alt: 'Some text'
       },
       message: 'Summer days',
@@ -17,7 +17,7 @@ module.exports = {
     {
       id: 2,
       image: {
-        src: '/dist/images/river.jpg'
+        src: '/images/river.jpg'
       },
       message: 'The long river',
       metaInfo: {
@@ -28,7 +28,7 @@ module.exports = {
     {
       id: 3,
       image: {
-        src: '/dist/images/mountains.jpg'
+        src: '/images/mountains.jpg'
       },
       message: 'Great mountains of australia',
       metaInfo: {
@@ -41,7 +41,7 @@ module.exports = {
     {
       id: 4,
       image: {
-        src: '/dist/images/summer.jpg',
+        src: '/images/summer.jpg',
         alt: 'Some text'
       },
       message: 'Summer days.',
