@@ -41,6 +41,27 @@ application.post('/posts/:id', function(req, res) {
   res.json(post);
 });
 
+var increment_id = 5;
+
+application.post('/posts', function (req, res) {
+  var query = req.query.values;
+  var post = {
+    likes: 0,
+    id: increment_id,
+    image: {
+      src: '/images/mountains.jpg'
+    },
+    metaInfo:{ }
+  }
+  post.message = query.title;
+  post.metaInfo.createdBy = query.author;
+  post.metaInfo.createdAt = Date.now();
+  post.metaInfo.updatedAt = Date.now();
+  posts.push(post);
+  increment_id++;
+  res.send(post);
+});
+
 application.put('/posts/:id', function (req, res) {
   var query = req.query.values;
   var post = (posts.find(post => post.id === parseInt(query.id)));
