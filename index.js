@@ -41,6 +41,21 @@ application.post('/posts/:id', function(req, res) {
   res.json(post);
 });
 
+application.put('/posts/:id', function (req, res) {
+  var query = req.query.values;
+  var post = (posts.find(post => post.id === parseInt(query.id)));
+  var result;
+  if (post) {
+    post.message = query.title;
+    post.metaInfo.createdBy = query.author;
+    post.metaInfo.updatedAt = Date.now();
+    result = post;
+  } else {
+    result = "Post not found";
+  }
+  res.send(result);
+});
+
 application.listen(3002, function() {
   console.log('Server on 3002');
 });
